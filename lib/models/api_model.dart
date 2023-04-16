@@ -1,6 +1,6 @@
 class ApiModel {
   final String coin;
-  final String price;
+  double price;
 
   ApiModel({
     required this.coin,

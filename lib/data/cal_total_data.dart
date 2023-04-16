@@ -4,8 +4,15 @@ import 'package:flutter/material.dart';
 
 class CalTotalData extends ChangeNotifier {
   List<double> total = List.generate(100, (index) => 0);
-
+  List<double> userInputValue = List.generate(100, (index) => 0);
   double totalPrice = 0;
+
+  void hiveUserInputValueForTotal() {
+    if (hvData.readUserInputValueForTotal() !=
+        List.generate(100, (index) => 0)) {
+      total = hvData.readUserInputValueForTotal();
+    }
+  }
 
   void hiveTotalData() {
     if (hvData.readTotal() != 0) {
@@ -13,11 +20,20 @@ class CalTotalData extends ChangeNotifier {
     }
   }
 
+  void hiveUserInputValue() {
+    if (hvData.readUserInput() != List.generate(100, (index) => 0)) {
+      userInputValue = hvData.readUserInput();
+    }
+  }
+
   void calTotal(String value, int index) {
     double userInput = double.tryParse(value) ?? 0;
-    double userPrice =
-        userInput * double.parse(addAndRemoveCoin.coinsOnScreen[index].price);
+    double userPrice = userInput * addAndRemoveCoin.coinsOnScreen[index].price;
     total[index] = userPrice;
+    userInputValue[index] = userInput;
+    hvData.saveUserInputValueForTotal(total);
+    hvData.saveUserInput(userInputValue);
+    notifyListeners();
 
     double sum = 0;
     for (var i = 0; i < total.length; i++) {
@@ -32,6 +48,13 @@ class CalTotalData extends ChangeNotifier {
     total[index] = 0;
     total.removeAt(index);
     total.add(0);
+    hvData.saveUserInputValueForTotal(total);
+
+    userInputValue.removeAt(index);
+    userInputValue.add(0);
+    hvData.saveUserInput(userInputValue);
+
+    notifyListeners();
     double sum = 0;
     for (var i = 0; i < total.length; i++) {
       sum = sum + total[i];

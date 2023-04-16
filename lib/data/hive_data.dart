@@ -4,6 +4,24 @@ import 'package:hive/hive.dart';
 class HiveData {
   final myBox = Hive.box('coin_database');
 
+  void saveUserInputValueForTotal(List<double> total) {
+    myBox.put('userInputValueForTotal', total);
+  }
+
+  List<double> readUserInputValueForTotal() {
+    return myBox.get('userInputValueForTotal') ??
+        List.generate(100, (index) => 0);
+  }
+
+  void saveUserInput(List<double> userInputValue) {
+    myBox.put('userInputValue', userInputValue);
+    print(myBox.get('userInputValue'));
+  }
+
+  List<double> readUserInput() {
+    return myBox.get('userInputValue') ?? List.generate(100, (index) => 0);
+  }
+
   void saveTotal(double totalPrice) {
     myBox.put('total', totalPrice);
   }
@@ -13,9 +31,9 @@ class HiveData {
   }
 
   void saveData(List<ApiModel> apiModel) {
-    List<List<String>> hiveApiModel = [];
+    List<List<dynamic>> hiveApiModel = [];
     for (final value in apiModel) {
-      List<String> hiveModel = [
+      List<dynamic> hiveModel = [
         value.coin,
         value.price,
       ];
@@ -31,7 +49,7 @@ class HiveData {
 
     for (var i = 0; i < savedHive.length; i++) {
       String coin = savedHive[i][0];
-      String price = savedHive[i][1];
+      double price = savedHive[i][1];
 
       ApiModel api = ApiModel(
         coin: coin,
