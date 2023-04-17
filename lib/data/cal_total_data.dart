@@ -55,6 +55,7 @@ class CalTotalData extends ChangeNotifier {
 
       sum = sum + total[i];
       totalPrice = sum;
+
       hvData.saveTotal(totalPrice);
       notifyListeners();
     }
@@ -68,8 +69,8 @@ class CalTotalData extends ChangeNotifier {
 
     userInputValue.removeAt(index);
     userInputValue.add(0);
-    hvData.saveUserInput(userInputValue);
 
+    hvData.saveUserInput(userInputValue);
     notifyListeners();
     double sum = 0;
     for (var i = 0; i < total.length; i++) {

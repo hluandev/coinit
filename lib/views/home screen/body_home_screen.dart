@@ -122,6 +122,7 @@ class _BodyHomeScreenState extends State<BodyHomeScreen> {
                         ),
                         Gaps.v12,
                         TextFormField(
+                          cursorColor: Theme.of(context).primaryColor,
                           decoration: InputDecoration(
                             contentPadding: const EdgeInsets.all(0),
                             focusedBorder: OutlineInputBorder(

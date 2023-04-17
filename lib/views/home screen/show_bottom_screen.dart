@@ -58,46 +58,66 @@ class ShowBottomScreen extends StatelessWidget {
                       onTap: () {
                         addAndRemoveCoin.addCoin(index);
                       },
-                      child: Column(
-                        children: [
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [
-                              Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  Text(
-                                    searchData.initialResults[index].coin,
-                                    style: const TextStyle(
-                                      color: Colors.white,
-                                      fontSize: Sizes.size24,
+                      child: Container(
+                        color: const Color(0xff0A0A0A),
+                        child: Column(
+                          children: [
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    Text(
+                                      searchData.initialResults[index].coin,
+                                      style: const TextStyle(
+                                        color: Colors.white,
+                                        fontSize: Sizes.size24,
+                                      ),
                                     ),
-                                  ),
-                                  Text(
-                                    searchData.initialResults[index].symbol,
-                                    style: const TextStyle(
-                                      color: Color.fromARGB(255, 170, 170, 170),
-                                      fontSize: Sizes.size20,
+                                    Text(
+                                      searchData.initialResults[index].symbol,
+                                      style: const TextStyle(
+                                        color:
+                                            Color.fromARGB(255, 170, 170, 170),
+                                        fontSize: Sizes.size20,
+                                      ),
                                     ),
-                                  ),
-                                ],
-                              ),
-                              Column(
-                                crossAxisAlignment: CrossAxisAlignment.end,
-                                children: [
-                                  Text(
-                                    NumberFormat().format(
-                                        searchData.initialResults[index].price),
-                                    style: const TextStyle(
-                                      color: Colors.white,
-                                      fontSize: Sizes.size24,
+                                  ],
+                                ),
+                                Column(
+                                  crossAxisAlignment: CrossAxisAlignment.end,
+                                  children: [
+                                    Text(
+                                      NumberFormat().format(searchData
+                                          .initialResults[index].price),
+                                      style: const TextStyle(
+                                        color: Colors.white,
+                                        fontSize: Sizes.size24,
+                                      ),
                                     ),
-                                  ),
-                                  Row(
-                                    children: [
-                                      Text(
-                                        '${NumberFormat().format(double.parse(searchData.initialResults[index].percent24h))}%',
-                                        style: TextStyle(
+                                    Row(
+                                      children: [
+                                        Text(
+                                          '${NumberFormat().format(double.parse(searchData.initialResults[index].percent24h))}%',
+                                          style: TextStyle(
+                                            color: double.parse(searchData
+                                                        .initialResults[index]
+                                                        .percent24h) >
+                                                    0
+                                                ? Theme.of(context).primaryColor
+                                                : const Color.fromARGB(
+                                                    255, 170, 170, 170),
+                                            fontSize: Sizes.size20,
+                                          ),
+                                        ),
+                                        Icon(
+                                          double.parse(searchData
+                                                      .initialResults[index]
+                                                      .percent24h) >
+                                                  0
+                                              ? FontAwesomeIcons.arrowUp
+                                              : FontAwesomeIcons.arrowDown,
                                           color: double.parse(searchData
                                                       .initialResults[index]
                                                       .percent24h) >
@@ -105,33 +125,17 @@ class ShowBottomScreen extends StatelessWidget {
                                               ? Theme.of(context).primaryColor
                                               : const Color.fromARGB(
                                                   255, 170, 170, 170),
-                                          fontSize: Sizes.size20,
-                                        ),
-                                      ),
-                                      Icon(
-                                        double.parse(searchData
-                                                    .initialResults[index]
-                                                    .percent24h) >
-                                                0
-                                            ? FontAwesomeIcons.arrowUp
-                                            : FontAwesomeIcons.arrowDown,
-                                        color: double.parse(searchData
-                                                    .initialResults[index]
-                                                    .percent24h) >
-                                                0
-                                            ? Theme.of(context).primaryColor
-                                            : const Color.fromARGB(
-                                                255, 170, 170, 170),
-                                        size: Sizes.size14,
-                                      )
-                                    ],
-                                  ),
-                                ],
-                              ),
-                            ],
-                          ),
-                          Gaps.v10,
-                        ],
+                                          size: Sizes.size14,
+                                        )
+                                      ],
+                                    ),
+                                  ],
+                                ),
+                              ],
+                            ),
+                            Gaps.v10,
+                          ],
+                        ),
                       ),
                     );
                   },

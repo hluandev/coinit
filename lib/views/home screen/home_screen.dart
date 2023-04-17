@@ -47,15 +47,19 @@ class _HomeScreenState extends State<HomeScreen> {
                 ),
                 child: AnimatedBuilder(
                   animation: calTotal,
-                  builder: (context, child) => Text(
-                    NumberFormat.simpleCurrency(
-                            locale: 'en-US', decimalDigits: 0)
-                        .format(calTotal.totalPrice),
-                    textAlign: TextAlign.center,
-                    style: const TextStyle(
-                      fontSize: Sizes.size36,
-                      color: Colors.black,
-                    ),
+                  builder: (context, child) => Column(
+                    children: [
+                      Text(
+                        NumberFormat.simpleCurrency(
+                                locale: 'en-US', decimalDigits: 0)
+                            .format(calTotal.totalPrice),
+                        textAlign: TextAlign.center,
+                        style: const TextStyle(
+                          fontSize: Sizes.size36,
+                          color: Colors.black,
+                        ),
+                      ),
+                    ],
                   ),
                 ),
               ),
@@ -85,7 +89,7 @@ class _HomeScreenState extends State<HomeScreen> {
             decoration: BoxDecoration(
                 color: Theme.of(context).primaryColor,
                 borderRadius: BorderRadius.circular(
-                  Sizes.size16,
+                  Sizes.size10,
                 )),
             child: const Icon(
               FontAwesomeIcons.angleUp,

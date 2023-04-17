@@ -35,6 +35,8 @@ class HiveData {
       List<dynamic> hiveModel = [
         value.coin,
         value.price,
+        value.percent24h,
+        value.symbol,
       ];
       hiveApiModel.add(hiveModel);
     }
