@@ -44,6 +44,22 @@ class CalTotalData extends ChangeNotifier {
     }
   }
 
+  void updateTotal() {
+    double sum = 0;
+    for (var i = 0; i < addAndRemoveCoin.coinsOnScreen.length; i++) {
+      double userPrice =
+          userInputValue[i] * addAndRemoveCoin.coinsOnScreen[i].price;
+      total[i] = userPrice;
+      hvData.saveUserInputValueForTotal(total);
+      hvData.saveUserInput(userInputValue);
+
+      sum = sum + total[i];
+      totalPrice = sum;
+      hvData.saveTotal(totalPrice);
+      notifyListeners();
+    }
+  }
+
   void removeInput(int index) {
     total[index] = 0;
     total.removeAt(index);

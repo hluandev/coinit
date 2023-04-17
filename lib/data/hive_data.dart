@@ -15,7 +15,6 @@ class HiveData {
 
   void saveUserInput(List<double> userInputValue) {
     myBox.put('userInputValue', userInputValue);
-    print(myBox.get('userInputValue'));
   }
 
   List<double> readUserInput() {
@@ -50,10 +49,14 @@ class HiveData {
     for (var i = 0; i < savedHive.length; i++) {
       String coin = savedHive[i][0];
       double price = savedHive[i][1];
+      String percent24h = savedHive[i][2];
+      String symbol = savedHive[i][3];
 
       ApiModel api = ApiModel(
         coin: coin,
         price: price,
+        percent24h: percent24h,
+        symbol: symbol,
       );
 
       apiModel.add(api);

@@ -19,7 +19,11 @@ class ApiData extends ChangeNotifier {
     for (final eachCoin in jsonData['data']) {
       final coin = ApiModel(
         coin: eachCoin['name'],
-        price: double.parse(eachCoin['priceUsd']),
+        price: double.parse(
+          eachCoin['priceUsd'],
+        ),
+        percent24h: eachCoin['changePercent24Hr'],
+        symbol: eachCoin['symbol'],
       );
 
       coins.add(coin);
