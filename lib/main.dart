@@ -18,9 +18,10 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'C',
+      themeMode: ThemeMode.system,
       theme: ThemeData(
-        primaryColor: const Color(0xffE6FFA0),
-        scaffoldBackgroundColor: const Color(0xff0A0A0A),
+        primaryColor: const Color(0xff00FF29),
+        scaffoldBackgroundColor: Colors.white,
         textTheme: GoogleFonts.juraTextTheme(),
       ),
       home: const HomeScreen(),

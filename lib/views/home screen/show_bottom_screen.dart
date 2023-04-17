@@ -1,3 +1,4 @@
+import 'package:c_app/const/gaps.dart';
 import 'package:c_app/const/sizes.dart';
 import 'package:c_app/data/add_and_remove_coin.dart';
 import 'package:c_app/data/api_data.dart';
@@ -13,21 +14,22 @@ class ShowBottomScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        elevation: 0,
         toolbarHeight: Sizes.size72,
-        backgroundColor: const Color(0xff0A0A0A),
+        backgroundColor: Colors.white,
         automaticallyImplyLeading: false,
         title: TextFormField(
           cursorColor: Theme.of(context).primaryColor,
           style: const TextStyle(
-            color: Colors.white,
-            fontSize: Sizes.size20,
-          ),
+              color: Colors.black,
+              fontSize: Sizes.size20,
+              fontWeight: FontWeight.bold),
           decoration: InputDecoration(
             contentPadding: const EdgeInsets.symmetric(
                 vertical: 0, horizontal: Sizes.size16),
             enabledBorder: const OutlineInputBorder(
               borderSide: BorderSide(
-                color: Colors.white,
+                color: Colors.black,
               ),
             ),
             focusedBorder: OutlineInputBorder(
@@ -72,10 +74,11 @@ class ShowBottomScreen extends StatelessWidget {
                                 Text(
                                   searchData.initialResults[index].coin,
                                   style: const TextStyle(
-                                    color: Colors.white,
-                                    fontSize: Sizes.size24,
-                                  ),
+                                      color: Colors.black,
+                                      fontSize: Sizes.size24,
+                                      fontWeight: FontWeight.bold),
                                 ),
+                                Gaps.v4,
                                 Text(
                                   searchData.initialResults[index].symbol,
                                   style: const TextStyle(
@@ -92,10 +95,11 @@ class ShowBottomScreen extends StatelessWidget {
                                   NumberFormat().format(
                                       searchData.initialResults[index].price),
                                   style: const TextStyle(
-                                    color: Colors.white,
-                                    fontSize: Sizes.size24,
-                                  ),
+                                      color: Colors.black,
+                                      fontSize: Sizes.size24,
+                                      fontWeight: FontWeight.bold),
                                 ),
+                                Gaps.v4,
                                 Row(
                                   children: [
                                     Text(
@@ -106,8 +110,7 @@ class ShowBottomScreen extends StatelessWidget {
                                                     .percent24h) >
                                                 0
                                             ? Theme.of(context).primaryColor
-                                            : const Color.fromARGB(
-                                                255, 170, 170, 170),
+                                            : const Color(0xff989898),
                                         fontSize: Sizes.size20,
                                       ),
                                     ),
@@ -123,8 +126,7 @@ class ShowBottomScreen extends StatelessWidget {
                                                   .percent24h) >
                                               0
                                           ? Theme.of(context).primaryColor
-                                          : const Color.fromARGB(
-                                              255, 170, 170, 170),
+                                          : const Color(0xff989898),
                                       size: Sizes.size14,
                                     )
                                   ],

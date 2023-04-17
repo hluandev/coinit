@@ -46,7 +46,8 @@ class _BodyHomeScreenState extends State<BodyHomeScreen> {
                       horizontal: Sizes.size20,
                     ),
                     decoration: BoxDecoration(
-                      color: const Color(0xff202020),
+                      color: Colors.white,
+                      border: Border.all(color: const Color(0xffDDDDDD)),
                       borderRadius: BorderRadius.circular(Sizes.size10),
                     ),
                     child: Column(
@@ -57,16 +58,18 @@ class _BodyHomeScreenState extends State<BodyHomeScreen> {
                             Text(
                               addAndRemoveCoin.coinsOnScreen[index].coin,
                               style: const TextStyle(
-                                color: Colors.white,
+                                color: Colors.black,
                                 fontSize: Sizes.size24,
+                                fontWeight: FontWeight.bold,
                               ),
                             ),
                             Text(
                               NumberFormat().format(
                                   addAndRemoveCoin.coinsOnScreen[index].price),
                               style: const TextStyle(
-                                color: Colors.white,
+                                color: Colors.black,
                                 fontSize: Sizes.size24,
+                                fontWeight: FontWeight.bold,
                               ),
                             ),
                           ],
@@ -78,7 +81,7 @@ class _BodyHomeScreenState extends State<BodyHomeScreen> {
                             Text(
                               addAndRemoveCoin.coinsOnScreen[index].symbol,
                               style: const TextStyle(
-                                color: Color.fromARGB(255, 170, 170, 170),
+                                color: Color(0xff989898),
                                 fontSize: Sizes.size20,
                               ),
                             ),
@@ -95,8 +98,7 @@ class _BodyHomeScreenState extends State<BodyHomeScreen> {
                                                 .percent24h) >
                                             0
                                         ? Theme.of(context).primaryColor
-                                        : const Color.fromARGB(
-                                            255, 170, 170, 170),
+                                        : const Color(0xff989898),
                                     fontSize: Sizes.size20,
                                   ),
                                 ),
@@ -131,14 +133,14 @@ class _BodyHomeScreenState extends State<BodyHomeScreen> {
                             ),
                             enabledBorder: const OutlineInputBorder(
                               borderSide: BorderSide(
-                                color: Color(0xff404040),
-                                width: Sizes.size2,
+                                color: Color(0xffDDDDDD),
+                                width: Sizes.size1,
                               ),
                             ),
                           ),
                           textAlign: TextAlign.center,
                           style: const TextStyle(
-                            color: Colors.white,
+                            color: Colors.black,
                             fontSize: Sizes.size24,
                           ),
                           initialValue: calTotal.userInputValue[index]
@@ -155,7 +157,7 @@ class _BodyHomeScreenState extends State<BodyHomeScreen> {
                       ],
                     ),
                   ),
-                  Gaps.v8
+                  Gaps.v16
                 ],
               ),
             );

@@ -38,14 +38,14 @@ class _HomeScreenState extends State<HomeScreen> {
         appBar: AppBar(
           toolbarHeight: Sizes.size80,
           centerTitle: true,
-          backgroundColor: const Color(0xff0A0A0A),
+          backgroundColor: Colors.white,
           elevation: 0,
           title: Row(
             children: [
               Expanded(
                 child: Container(
                   padding: const EdgeInsets.symmetric(
-                    vertical: Sizes.size10,
+                    vertical: Sizes.size5,
                   ),
                   decoration: BoxDecoration(
                     color: Theme.of(context).primaryColor,
@@ -80,8 +80,8 @@ class _HomeScreenState extends State<HomeScreen> {
             right: Sizes.size16,
             left: Sizes.size16,
             top: Sizes.size10,
+            bottom: Sizes.size10,
           ),
-          color: const Color(0xff0A0A0A),
           child: GestureDetector(
             onTap: () {
               addAndRemoveCoin.shownBottom = true;
