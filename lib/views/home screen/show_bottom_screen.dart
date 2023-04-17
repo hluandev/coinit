@@ -1,4 +1,3 @@
-import 'package:c_app/const/gaps.dart';
 import 'package:c_app/const/sizes.dart';
 import 'package:c_app/data/add_and_remove_coin.dart';
 import 'package:c_app/data/api_data.dart';
@@ -54,86 +53,84 @@ class ShowBottomScreen extends StatelessWidget {
                 builder: (context, child) => ListView.builder(
                   itemCount: searchData.initialResults.length,
                   itemBuilder: (context, index) {
-                    return GestureDetector(
-                      onTap: () {
-                        addAndRemoveCoin.addCoin(index);
-                      },
-                      child: Container(
-                        color: const Color(0xff0A0A0A),
-                        child: Column(
+                    return Ink(
+                      padding: const EdgeInsets.symmetric(
+                        vertical: Sizes.size8,
+                      ),
+                      child: InkWell(
+                        splashColor: Theme.of(context).primaryColor,
+                        splashFactory: InkSparkle.splashFactory,
+                        onTap: () {
+                          addAndRemoveCoin.addCoin(index);
+                        },
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
-                            Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
-                                Column(
-                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                Text(
+                                  searchData.initialResults[index].coin,
+                                  style: const TextStyle(
+                                    color: Colors.white,
+                                    fontSize: Sizes.size24,
+                                  ),
+                                ),
+                                Text(
+                                  searchData.initialResults[index].symbol,
+                                  style: const TextStyle(
+                                    color: Color.fromARGB(255, 170, 170, 170),
+                                    fontSize: Sizes.size20,
+                                  ),
+                                ),
+                              ],
+                            ),
+                            Column(
+                              crossAxisAlignment: CrossAxisAlignment.end,
+                              children: [
+                                Text(
+                                  NumberFormat().format(
+                                      searchData.initialResults[index].price),
+                                  style: const TextStyle(
+                                    color: Colors.white,
+                                    fontSize: Sizes.size24,
+                                  ),
+                                ),
+                                Row(
                                   children: [
                                     Text(
-                                      searchData.initialResults[index].coin,
-                                      style: const TextStyle(
-                                        color: Colors.white,
-                                        fontSize: Sizes.size24,
-                                      ),
-                                    ),
-                                    Text(
-                                      searchData.initialResults[index].symbol,
-                                      style: const TextStyle(
-                                        color:
-                                            Color.fromARGB(255, 170, 170, 170),
+                                      '${NumberFormat().format(double.parse(searchData.initialResults[index].percent24h))}%',
+                                      style: TextStyle(
+                                        color: double.parse(searchData
+                                                    .initialResults[index]
+                                                    .percent24h) >
+                                                0
+                                            ? Theme.of(context).primaryColor
+                                            : const Color.fromARGB(
+                                                255, 170, 170, 170),
                                         fontSize: Sizes.size20,
                                       ),
                                     ),
-                                  ],
-                                ),
-                                Column(
-                                  crossAxisAlignment: CrossAxisAlignment.end,
-                                  children: [
-                                    Text(
-                                      NumberFormat().format(searchData
-                                          .initialResults[index].price),
-                                      style: const TextStyle(
-                                        color: Colors.white,
-                                        fontSize: Sizes.size24,
-                                      ),
-                                    ),
-                                    Row(
-                                      children: [
-                                        Text(
-                                          '${NumberFormat().format(double.parse(searchData.initialResults[index].percent24h))}%',
-                                          style: TextStyle(
-                                            color: double.parse(searchData
-                                                        .initialResults[index]
-                                                        .percent24h) >
-                                                    0
-                                                ? Theme.of(context).primaryColor
-                                                : const Color.fromARGB(
-                                                    255, 170, 170, 170),
-                                            fontSize: Sizes.size20,
-                                          ),
-                                        ),
-                                        Icon(
-                                          double.parse(searchData
-                                                      .initialResults[index]
-                                                      .percent24h) >
-                                                  0
-                                              ? FontAwesomeIcons.arrowUp
-                                              : FontAwesomeIcons.arrowDown,
-                                          color: double.parse(searchData
-                                                      .initialResults[index]
-                                                      .percent24h) >
-                                                  0
-                                              ? Theme.of(context).primaryColor
-                                              : const Color.fromARGB(
-                                                  255, 170, 170, 170),
-                                          size: Sizes.size14,
-                                        )
-                                      ],
-                                    ),
+                                    Icon(
+                                      double.parse(searchData
+                                                  .initialResults[index]
+                                                  .percent24h) >
+                                              0
+                                          ? FontAwesomeIcons.arrowUp
+                                          : FontAwesomeIcons.arrowDown,
+                                      color: double.parse(searchData
+                                                  .initialResults[index]
+                                                  .percent24h) >
+                                              0
+                                          ? Theme.of(context).primaryColor
+                                          : const Color.fromARGB(
+                                              255, 170, 170, 170),
+                                      size: Sizes.size14,
+                                    )
                                   ],
                                 ),
                               ],
                             ),
-                            Gaps.v10,
                           ],
                         ),
                       ),

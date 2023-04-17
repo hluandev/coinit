@@ -23,8 +23,6 @@ class _BodyHomeScreenState extends State<BodyHomeScreen> {
     super.initState();
   }
 
-  
-
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -39,7 +37,7 @@ class _BodyHomeScreenState extends State<BodyHomeScreen> {
                 calTotal.removeInput(index);
                 addAndRemoveCoin.removeCoin(index);
               },
-              key: Key(addAndRemoveCoin.coinsOnScreen[index].coin),
+              key: UniqueKey(),
               child: Column(
                 children: [
                   Container(
