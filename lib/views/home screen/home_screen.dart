@@ -26,74 +26,81 @@ class _HomeScreenState extends State<HomeScreen> {
     super.initState();
   }
 
+  void _bodyTap() {
+    FocusScope.of(context).unfocus();
+  }
+
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        toolbarHeight: Sizes.size80,
-        centerTitle: true,
-        backgroundColor: const Color(0xff0A0A0A),
-        elevation: 0,
-        title: Row(
-          children: [
-            Expanded(
-              child: Container(
-                padding: const EdgeInsets.symmetric(
-                  vertical: Sizes.size10,
-                ),
-                decoration: BoxDecoration(
-                  color: Theme.of(context).primaryColor,
-                  borderRadius: BorderRadius.circular(Sizes.size10),
-                ),
-                child: AnimatedBuilder(
-                  animation: calTotal,
-                  builder: (context, child) => Column(
-                    children: [
-                      Text(
-                        NumberFormat.simpleCurrency(
-                                locale: 'en-US', decimalDigits: 0)
-                            .format(calTotal.totalPrice),
-                        textAlign: TextAlign.center,
-                        style: const TextStyle(
-                          fontSize: Sizes.size36,
-                          color: Colors.black,
+    return GestureDetector(
+      onTap: _bodyTap,
+      child: Scaffold(
+        appBar: AppBar(
+          toolbarHeight: Sizes.size80,
+          centerTitle: true,
+          backgroundColor: const Color(0xff0A0A0A),
+          elevation: 0,
+          title: Row(
+            children: [
+              Expanded(
+                child: Container(
+                  padding: const EdgeInsets.symmetric(
+                    vertical: Sizes.size10,
+                  ),
+                  decoration: BoxDecoration(
+                    color: Theme.of(context).primaryColor,
+                    borderRadius: BorderRadius.circular(Sizes.size10),
+                  ),
+                  child: AnimatedBuilder(
+                    animation: calTotal,
+                    builder: (context, child) => Column(
+                      children: [
+                        Text(
+                          NumberFormat.simpleCurrency(
+                                  locale: 'en-US', decimalDigits: 0)
+                              .format(calTotal.totalPrice),
+                          textAlign: TextAlign.center,
+                          style: const TextStyle(
+                            fontSize: Sizes.size36,
+                            color: Colors.black,
+                          ),
                         ),
-                      ),
-                    ],
+                      ],
+                    ),
                   ),
                 ),
               ),
-            ),
-          ],
+            ],
+          ),
         ),
-      ),
-      body: const BodyHomeScreen(),
-      bottomNavigationBar: BottomAppBar(
-        elevation: 0,
-        padding: const EdgeInsets.only(
-          right: Sizes.size16,
-          left: Sizes.size16,
-          top: Sizes.size10,
-        ),
-        color: const Color(0xff0A0A0A),
-        child: GestureDetector(
-          onTap: () {
-            addAndRemoveCoin.shownBottom = true;
-            showModalBottomSheet(
-              context: context,
-              builder: (context) => const ShowBottomScreen(),
-            ).whenComplete(() => addAndRemoveCoin.shownBottom = false);
-          },
-          child: Container(
-            padding: const EdgeInsets.symmetric(vertical: Sizes.size10),
-            decoration: BoxDecoration(
-                color: Theme.of(context).primaryColor,
-                borderRadius: BorderRadius.circular(
-                  Sizes.size10,
-                )),
-            child: const Icon(
-              FontAwesomeIcons.angleUp,
-              size: Sizes.size28,
+        body: const BodyHomeScreen(),
+        bottomNavigationBar: BottomAppBar(
+          elevation: 0,
+          padding: const EdgeInsets.only(
+            right: Sizes.size16,
+            left: Sizes.size16,
+            top: Sizes.size10,
+          ),
+          color: const Color(0xff0A0A0A),
+          child: GestureDetector(
+            onTap: () {
+              addAndRemoveCoin.shownBottom = true;
+              showModalBottomSheet(
+                context: context,
+                builder: (context) => const ShowBottomScreen(),
+              ).whenComplete(() => addAndRemoveCoin.shownBottom = false);
+            },
+            child: Container(
+              padding: const EdgeInsets.symmetric(vertical: Sizes.size10),
+              decoration: BoxDecoration(
+                  color: Theme.of(context).primaryColor,
+                  borderRadius: BorderRadius.circular(
+                    Sizes.size10,
+                  )),
+              child: const Icon(
+                FontAwesomeIcons.angleUp,
+                size: Sizes.size28,
+              ),
             ),
           ),
         ),
