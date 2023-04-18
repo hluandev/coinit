@@ -26,7 +26,10 @@ class _BodyHomeScreenState extends State<BodyHomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: Sizes.size16),
+      padding: const EdgeInsets.only(
+        left: Sizes.size16,
+        right: Sizes.size16,
+      ),
       child: AnimatedBuilder(
         animation: addAndRemoveCoin,
         builder: (context, child) => ListView.builder(
@@ -40,14 +43,17 @@ class _BodyHomeScreenState extends State<BodyHomeScreen> {
               key: UniqueKey(),
               child: Column(
                 children: [
+                  Gaps.v16,
                   Container(
-                    padding: const EdgeInsets.symmetric(
-                      vertical: Sizes.size20,
-                      horizontal: Sizes.size20,
+                    padding: const EdgeInsets.only(
+                      top: Sizes.size20,
+                      left: Sizes.size20,
+                      right: Sizes.size20,
                     ),
                     decoration: BoxDecoration(
-                      color: Colors.white,
-                      borderRadius: BorderRadius.circular(Sizes.size10),
+                      border: Border.all(
+                        color: const Color.fromARGB(255, 200, 200, 200),
+                      ),
                     ),
                     child: Column(
                       children: [
@@ -59,7 +65,7 @@ class _BodyHomeScreenState extends State<BodyHomeScreen> {
                               style: const TextStyle(
                                 color: Colors.black,
                                 fontSize: Sizes.size20,
-                                fontWeight: FontWeight.bold,
+                                fontWeight: FontWeight.w500,
                               ),
                             ),
                             Text(
@@ -119,43 +125,44 @@ class _BodyHomeScreenState extends State<BodyHomeScreen> {
                             ),
                           ],
                         ),
-                        Gaps.v16,
-                        TextFormField(
-                          cursorColor: Theme.of(context).primaryColor,
-                          decoration: InputDecoration(
-                              fillColor: const Color(0xffF8F8F8),
-                              filled: true,
-                              contentPadding: const EdgeInsets.all(0),
-                              enabledBorder: OutlineInputBorder(
-                                  borderSide:
-                                      const BorderSide(color: Colors.white),
-                                  borderRadius:
-                                      BorderRadius.circular(Sizes.size10)),
-                              focusedBorder: OutlineInputBorder(
-                                  borderRadius:
-                                      BorderRadius.circular(Sizes.size10),
-                                  borderSide: BorderSide(
-                                      color: Theme.of(context).primaryColor))),
-                          textAlign: TextAlign.center,
-                          style: const TextStyle(
-                            color: Colors.black,
-                            fontSize: Sizes.size20,
+                        Gaps.v10,
+                        const Divider(
+                          color: Color.fromARGB(255, 200, 200, 200),
+                          thickness: 1,
+                        ),
+                        SizedBox(
+                          height: Sizes.size40,
+                          child: TextFormField(
+                            cursorColor: Theme.of(context).primaryColor,
+                            decoration: const InputDecoration(
+                              hintText: '0',
+                              contentPadding: EdgeInsets.only(
+                                top: 0,
+                                bottom: Sizes.size14,
+                              ),
+                              enabledBorder: InputBorder.none,
+                              focusedBorder: InputBorder.none,
+                            ),
+                            textAlign: TextAlign.center,
+                            style: const TextStyle(
+                              color: Colors.black,
+                              fontSize: Sizes.size20,
+                            ),
+                            initialValue: calTotal.userInputValue[index]
+                                        .toStringAsFixed(0) ==
+                                    '0'
+                                ? ''
+                                : calTotal.userInputValue[index]
+                                    .toStringAsFixed(0),
+                            onChanged: (value) {
+                              calTotal.calTotal(value, index);
+                            },
+                            keyboardType: TextInputType.number,
                           ),
-                          initialValue: calTotal.userInputValue[index]
-                                      .toStringAsFixed(0) ==
-                                  '0'
-                              ? ''
-                              : calTotal.userInputValue[index]
-                                  .toStringAsFixed(0),
-                          onChanged: (value) {
-                            calTotal.calTotal(value, index);
-                          },
-                          keyboardType: TextInputType.number,
                         ),
                       ],
                     ),
                   ),
-                  Gaps.v16
                 ],
               ),
             );

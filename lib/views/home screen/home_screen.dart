@@ -7,7 +7,6 @@ import 'package:c_app/views/home%20screen/body_home_screen.dart';
 import 'package:c_app/views/home%20screen/show_bottom_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:intl/intl.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -37,40 +36,44 @@ class _HomeScreenState extends State<HomeScreen> {
       onTap: _bodyTap,
       child: Scaffold(
         appBar: AppBar(
-          toolbarHeight: Sizes.size80,
+          toolbarHeight: Sizes.size64,
           centerTitle: true,
-          backgroundColor: const Color(0xffF1F1F1),
+          backgroundColor: Colors.white,
           elevation: 0,
-          title: Row(
+          title: Column(
             children: [
-              Expanded(
-                child: Container(
-                  padding: const EdgeInsets.symmetric(
-                    vertical: Sizes.size5,
-                  ),
-                  decoration: BoxDecoration(
-                    color: Colors.white,
-                    borderRadius: BorderRadius.circular(Sizes.size10),
-                  ),
-                  child: AnimatedBuilder(
-                    animation: calTotal,
-                    builder: (context, child) => Column(
-                      children: [
-                        Text(
-                          NumberFormat.simpleCurrency(
-                                  locale: 'en-US', decimalDigits: 0)
-                              .format(calTotal.totalPrice),
-                          textAlign: TextAlign.center,
-                          style: GoogleFonts.jura(
-                            fontSize: Sizes.size36,
-                            color: Colors.black,
-                            fontWeight: FontWeight.w600,
+              Row(
+                children: [
+                  Expanded(
+                    child: AnimatedBuilder(
+                      animation: calTotal,
+                      builder: (context, child) => Column(
+                        children: [
+                          Padding(
+                            padding: const EdgeInsets.only(
+                              top: Sizes.size10,
+                            ),
+                            child: Text(
+                                NumberFormat.simpleCurrency(
+                                        locale: 'en-US', decimalDigits: 0)
+                                    .format(calTotal.totalPrice),
+                                textAlign: TextAlign.center,
+                                style: const TextStyle(
+                                  fontFamily: 'Britney',
+                                  fontSize: Sizes.size40,
+                                  color: Colors.black,
+                                  fontWeight: FontWeight.w600,
+                                )),
                           ),
-                        ),
-                      ],
+                        ],
+                      ),
                     ),
                   ),
-                ),
+                ],
+              ),
+              const Divider(
+                color: Color.fromARGB(255, 199, 199, 199),
+                thickness: 1,
               ),
             ],
           ),

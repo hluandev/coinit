@@ -92,3 +92,22 @@ flutter:
   #
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages
+  fonts:
+    - family: Britney
+      fonts:
+        - asset: lib/asset/font/Britney-Ultra.otf
+          weight: 600
+        - asset: lib/asset/font/Britney-Bold.otf
+          weight: 500
+        - asset: lib/asset/font/Britney-Regular.otf
+          weight: 400
+        - asset: lib/asset/font/Britney-Light.otf
+          weight: 300
+    - family: Satoshi
+      fonts:
+        - asset: lib/asset/font/Satoshi-Medium.otf
+          weight: 500
+        - asset: lib/asset/font/Satoshi-Regular.otf
+          weight: 400
+        - asset: lib/asset/font/Satoshi-Light.otf
+          weight: 300

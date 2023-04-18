@@ -85,9 +85,10 @@ class ShowBottomScreen extends StatelessWidget {
                                 Text(
                                   searchData.initialResults[index].coin,
                                   style: const TextStyle(
-                                      color: Colors.black,
-                                      fontSize: Sizes.size16,
-                                      fontWeight: FontWeight.bold),
+                                    color: Colors.black,
+                                    fontSize: Sizes.size16,
+                                    fontWeight: FontWeight.w500,
+                                  ),
                                 ),
                                 Gaps.v5,
                                 Text(
