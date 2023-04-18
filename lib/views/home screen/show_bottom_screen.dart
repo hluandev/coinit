@@ -13,33 +13,44 @@ class ShowBottomScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
       appBar: AppBar(
         elevation: 0,
-        toolbarHeight: Sizes.size72,
+        // toolbarHeight: Sizes.size80,
         backgroundColor: Colors.white,
         automaticallyImplyLeading: false,
-        title: TextFormField(
-          cursorColor: Theme.of(context).primaryColor,
-          style: const TextStyle(
-              color: Colors.black,
-              fontSize: Sizes.size20,
-              fontWeight: FontWeight.bold),
-          decoration: InputDecoration(
-            contentPadding: const EdgeInsets.symmetric(
-                vertical: 0, horizontal: Sizes.size16),
-            enabledBorder: const OutlineInputBorder(
-              borderSide: BorderSide(
+        title: Padding(
+          padding: const EdgeInsets.only(top: Sizes.size10),
+          child: SizedBox(
+            height: Sizes.size36,
+            child: TextFormField(
+              cursorColor: Theme.of(context).primaryColor,
+              style: const TextStyle(
                 color: Colors.black,
+                fontSize: Sizes.size20,
               ),
-            ),
-            focusedBorder: OutlineInputBorder(
-              borderSide: BorderSide(
-                color: Theme.of(context).primaryColor,
+              decoration: InputDecoration(
+                fillColor: const Color(0xffF1F1F1),
+                filled: true,
+                contentPadding: const EdgeInsets.symmetric(
+                  vertical: 0,
+                  horizontal: Sizes.size14,
+                ),
+                enabledBorder: const OutlineInputBorder(
+                  borderSide: BorderSide(
+                    color: Color(0xffF1F1F1),
+                  ),
+                ),
+                focusedBorder: OutlineInputBorder(
+                  borderSide: BorderSide(
+                    color: Theme.of(context).primaryColor,
+                  ),
+                ),
               ),
+              initialValue: searchData.textResult,
+              onChanged: (value) => searchData.getResults(value),
             ),
           ),
-          initialValue: searchData.textResult,
-          onChanged: (value) => searchData.getResults(value),
         ),
       ),
       body: FutureBuilder(
@@ -48,7 +59,7 @@ class ShowBottomScreen extends StatelessWidget {
           if (snapshot.connectionState == ConnectionState.done) {
             return Padding(
               padding: const EdgeInsets.symmetric(
-                horizontal: Sizes.size14,
+                horizontal: Sizes.size16,
               ),
               child: AnimatedBuilder(
                 animation: searchData,
@@ -75,15 +86,15 @@ class ShowBottomScreen extends StatelessWidget {
                                   searchData.initialResults[index].coin,
                                   style: const TextStyle(
                                       color: Colors.black,
-                                      fontSize: Sizes.size24,
+                                      fontSize: Sizes.size16,
                                       fontWeight: FontWeight.bold),
                                 ),
-                                Gaps.v4,
+                                Gaps.v5,
                                 Text(
                                   searchData.initialResults[index].symbol,
                                   style: const TextStyle(
                                     color: Color.fromARGB(255, 170, 170, 170),
-                                    fontSize: Sizes.size20,
+                                    fontSize: Sizes.size14,
                                   ),
                                 ),
                               ],
@@ -95,11 +106,11 @@ class ShowBottomScreen extends StatelessWidget {
                                   NumberFormat().format(
                                       searchData.initialResults[index].price),
                                   style: const TextStyle(
-                                      color: Colors.black,
-                                      fontSize: Sizes.size24,
-                                      fontWeight: FontWeight.bold),
+                                    color: Colors.black,
+                                    fontSize: Sizes.size16,
+                                  ),
                                 ),
-                                Gaps.v4,
+                                Gaps.v5,
                                 Row(
                                   children: [
                                     Text(
@@ -109,9 +120,10 @@ class ShowBottomScreen extends StatelessWidget {
                                                     .initialResults[index]
                                                     .percent24h) >
                                                 0
-                                            ? Theme.of(context).primaryColor
-                                            : const Color(0xff989898),
-                                        fontSize: Sizes.size20,
+                                            ? const Color.fromARGB(
+                                                255, 46, 230, 0)
+                                            : const Color(0xffFF0000),
+                                        fontSize: Sizes.size14,
                                       ),
                                     ),
                                     Icon(
@@ -125,8 +137,9 @@ class ShowBottomScreen extends StatelessWidget {
                                                   .initialResults[index]
                                                   .percent24h) >
                                               0
-                                          ? Theme.of(context).primaryColor
-                                          : const Color(0xff989898),
+                                          ? const Color.fromARGB(
+                                              255, 46, 230, 0)
+                                          : const Color(0xffFF0000),
                                       size: Sizes.size14,
                                     )
                                   ],

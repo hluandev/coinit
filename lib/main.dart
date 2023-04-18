@@ -20,10 +20,9 @@ class MyApp extends StatelessWidget {
       title: 'C',
       themeMode: ThemeMode.system,
       theme: ThemeData(
-        primaryColor: const Color(0xff00FF29),
-        scaffoldBackgroundColor: Colors.white,
-        textTheme: GoogleFonts.juraTextTheme(),
-      ),
+          primaryColor: const Color.fromARGB(255, 0, 0, 0),
+          scaffoldBackgroundColor: const Color(0xffF1F1F1),
+          textTheme: GoogleFonts.interTextTheme()),
       home: const HomeScreen(),
     );
   }

@@ -42,12 +42,11 @@ class _BodyHomeScreenState extends State<BodyHomeScreen> {
                 children: [
                   Container(
                     padding: const EdgeInsets.symmetric(
-                      vertical: Sizes.size16,
+                      vertical: Sizes.size20,
                       horizontal: Sizes.size20,
                     ),
                     decoration: BoxDecoration(
                       color: Colors.white,
-                      border: Border.all(color: const Color(0xffDDDDDD)),
                       borderRadius: BorderRadius.circular(Sizes.size10),
                     ),
                     child: Column(
@@ -59,7 +58,7 @@ class _BodyHomeScreenState extends State<BodyHomeScreen> {
                               addAndRemoveCoin.coinsOnScreen[index].coin,
                               style: const TextStyle(
                                 color: Colors.black,
-                                fontSize: Sizes.size24,
+                                fontSize: Sizes.size20,
                                 fontWeight: FontWeight.bold,
                               ),
                             ),
@@ -68,13 +67,12 @@ class _BodyHomeScreenState extends State<BodyHomeScreen> {
                                   addAndRemoveCoin.coinsOnScreen[index].price),
                               style: const TextStyle(
                                 color: Colors.black,
-                                fontSize: Sizes.size24,
-                                fontWeight: FontWeight.bold,
+                                fontSize: Sizes.size20,
                               ),
                             ),
                           ],
                         ),
-                        Gaps.v4,
+                        Gaps.v5,
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
@@ -82,7 +80,7 @@ class _BodyHomeScreenState extends State<BodyHomeScreen> {
                               addAndRemoveCoin.coinsOnScreen[index].symbol,
                               style: const TextStyle(
                                 color: Color(0xff989898),
-                                fontSize: Sizes.size20,
+                                fontSize: Sizes.size16,
                               ),
                             ),
                             Row(
@@ -97,9 +95,9 @@ class _BodyHomeScreenState extends State<BodyHomeScreen> {
                                                 .coinsOnScreen[index]
                                                 .percent24h) >
                                             0
-                                        ? Theme.of(context).primaryColor
-                                        : const Color(0xff989898),
-                                    fontSize: Sizes.size20,
+                                        ? const Color.fromARGB(255, 46, 230, 0)
+                                        : const Color(0xffFF0000),
+                                    fontSize: Sizes.size16,
                                   ),
                                 ),
                                 Icon(
@@ -113,35 +111,35 @@ class _BodyHomeScreenState extends State<BodyHomeScreen> {
                                               .coinsOnScreen[index]
                                               .percent24h) >
                                           0
-                                      ? Theme.of(context).primaryColor
-                                      : const Color.fromARGB(
-                                          255, 170, 170, 170),
+                                      ? const Color.fromARGB(255, 46, 230, 0)
+                                      : const Color(0xffFF0000),
                                   size: Sizes.size14,
                                 )
                               ],
                             ),
                           ],
                         ),
-                        Gaps.v12,
+                        Gaps.v16,
                         TextFormField(
                           cursorColor: Theme.of(context).primaryColor,
                           decoration: InputDecoration(
-                            contentPadding: const EdgeInsets.all(0),
-                            focusedBorder: OutlineInputBorder(
-                              borderSide: BorderSide(
-                                  color: Theme.of(context).primaryColor),
-                            ),
-                            enabledBorder: const OutlineInputBorder(
-                              borderSide: BorderSide(
-                                color: Color(0xffDDDDDD),
-                                width: Sizes.size1,
-                              ),
-                            ),
-                          ),
+                              fillColor: const Color(0xffF8F8F8),
+                              filled: true,
+                              contentPadding: const EdgeInsets.all(0),
+                              enabledBorder: OutlineInputBorder(
+                                  borderSide:
+                                      const BorderSide(color: Colors.white),
+                                  borderRadius:
+                                      BorderRadius.circular(Sizes.size10)),
+                              focusedBorder: OutlineInputBorder(
+                                  borderRadius:
+                                      BorderRadius.circular(Sizes.size10),
+                                  borderSide: BorderSide(
+                                      color: Theme.of(context).primaryColor))),
                           textAlign: TextAlign.center,
                           style: const TextStyle(
                             color: Colors.black,
-                            fontSize: Sizes.size24,
+                            fontSize: Sizes.size20,
                           ),
                           initialValue: calTotal.userInputValue[index]
                                       .toStringAsFixed(0) ==

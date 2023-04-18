@@ -7,6 +7,7 @@ import 'package:c_app/views/home%20screen/body_home_screen.dart';
 import 'package:c_app/views/home%20screen/show_bottom_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:intl/intl.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -38,7 +39,7 @@ class _HomeScreenState extends State<HomeScreen> {
         appBar: AppBar(
           toolbarHeight: Sizes.size80,
           centerTitle: true,
-          backgroundColor: Colors.white,
+          backgroundColor: const Color(0xffF1F1F1),
           elevation: 0,
           title: Row(
             children: [
@@ -48,7 +49,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     vertical: Sizes.size5,
                   ),
                   decoration: BoxDecoration(
-                    color: Theme.of(context).primaryColor,
+                    color: Colors.white,
                     borderRadius: BorderRadius.circular(Sizes.size10),
                   ),
                   child: AnimatedBuilder(
@@ -60,9 +61,10 @@ class _HomeScreenState extends State<HomeScreen> {
                                   locale: 'en-US', decimalDigits: 0)
                               .format(calTotal.totalPrice),
                           textAlign: TextAlign.center,
-                          style: const TextStyle(
+                          style: GoogleFonts.jura(
                             fontSize: Sizes.size36,
                             color: Colors.black,
+                            fontWeight: FontWeight.w600,
                           ),
                         ),
                       ],
@@ -75,13 +77,8 @@ class _HomeScreenState extends State<HomeScreen> {
         ),
         body: const BodyHomeScreen(),
         bottomNavigationBar: BottomAppBar(
+          color: const Color.fromARGB(255, 237, 237, 237),
           elevation: 0,
-          padding: const EdgeInsets.only(
-            right: Sizes.size16,
-            left: Sizes.size16,
-            top: Sizes.size10,
-            bottom: Sizes.size10,
-          ),
           child: GestureDetector(
             onTap: () {
               addAndRemoveCoin.shownBottom = true;
@@ -92,14 +89,13 @@ class _HomeScreenState extends State<HomeScreen> {
             },
             child: Container(
               padding: const EdgeInsets.symmetric(vertical: Sizes.size10),
-              decoration: BoxDecoration(
-                  color: Theme.of(context).primaryColor,
-                  borderRadius: BorderRadius.circular(
-                    Sizes.size10,
-                  )),
+              decoration: const BoxDecoration(
+                color: Colors.black,
+              ),
               child: const Icon(
                 FontAwesomeIcons.angleUp,
                 size: Sizes.size28,
+                color: Colors.white,
               ),
             ),
           ),
