@@ -20,7 +20,9 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   void initState() {
     Timer.periodic(const Duration(seconds: 10), (timer) {
-      addAndRemoveCoin.updateCoin();
+      if (MediaQuery.of(context).viewInsets.bottom == 0) {
+        addAndRemoveCoin.updateCoin();
+      }
     });
 
     super.initState();
