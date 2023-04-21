@@ -82,7 +82,6 @@ class _HomeScreenState extends State<HomeScreen> {
         ),
         body: const BodyHomeScreen(),
         bottomNavigationBar: BottomAppBar(
-          color: const Color.fromARGB(255, 237, 237, 237),
           elevation: 0,
           child: GestureDetector(
             onTap: () {
@@ -94,13 +93,10 @@ class _HomeScreenState extends State<HomeScreen> {
             },
             child: Container(
               padding: const EdgeInsets.symmetric(vertical: Sizes.size10),
-              decoration: const BoxDecoration(
-                color: Colors.black,
-              ),
               child: const Icon(
                 FontAwesomeIcons.angleUp,
                 size: Sizes.size28,
-                color: Colors.white,
+                color: Colors.black,
               ),
             ),
           ),
