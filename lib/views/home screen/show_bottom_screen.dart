@@ -71,7 +71,7 @@ class ShowBottomScreen extends StatelessWidget {
                         vertical: Sizes.size8,
                       ),
                       child: InkWell(
-                        splashColor: Theme.of(context).primaryColor,
+                        splashColor: const Color.fromARGB(255, 154, 255, 153),
                         splashFactory: InkSparkle.splashFactory,
                         onTap: () {
                           addAndRemoveCoin.addCoin(index);
