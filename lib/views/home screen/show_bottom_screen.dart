@@ -71,7 +71,7 @@ class ShowBottomScreen extends StatelessWidget {
                         vertical: Sizes.size8,
                       ),
                       child: InkWell(
-                        splashColor: const Color.fromARGB(255, 154, 255, 153),
+                        splashColor: const Color(0xffcc00ff),
                         splashFactory: InkSparkle.splashFactory,
                         onTap: () {
                           addAndRemoveCoin.addCoin(index);
@@ -156,9 +156,9 @@ class ShowBottomScreen extends StatelessWidget {
               ),
             );
           } else {
-            return Center(
+            return const Center(
               child: CircularProgressIndicator(
-                color: Theme.of(context).primaryColor,
+                color: Colors.white,
               ),
             );
           }

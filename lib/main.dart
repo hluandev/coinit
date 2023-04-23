@@ -16,7 +16,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'C',
+      title: 'CryptCrypt',
       themeMode: ThemeMode.system,
       theme: ThemeData(
         primaryColor: const Color.fromARGB(255, 0, 0, 0),
