@@ -13,37 +13,37 @@ class ShowBottomScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
+      backgroundColor: Colors.black,
       appBar: AppBar(
         elevation: 0,
         // toolbarHeight: Sizes.size80,
-        backgroundColor: Colors.white,
+        backgroundColor: Colors.black,
         automaticallyImplyLeading: false,
         title: Padding(
           padding: const EdgeInsets.only(top: Sizes.size10),
           child: SizedBox(
             height: Sizes.size36,
             child: TextFormField(
-              cursorColor: Theme.of(context).primaryColor,
+              cursorColor: Colors.white,
               style: const TextStyle(
-                color: Colors.black,
-                fontSize: Sizes.size20,
+                color: Colors.white,
+                fontSize: Sizes.size16,
               ),
-              decoration: InputDecoration(
-                fillColor: const Color(0xffF1F1F1),
+              decoration: const InputDecoration(
+                fillColor: Color.fromARGB(255, 42, 42, 42),
                 filled: true,
-                contentPadding: const EdgeInsets.symmetric(
+                contentPadding: EdgeInsets.symmetric(
                   vertical: 0,
                   horizontal: Sizes.size14,
                 ),
-                enabledBorder: const OutlineInputBorder(
+                enabledBorder: OutlineInputBorder(
                   borderSide: BorderSide(
-                    color: Color(0xffF1F1F1),
+                    color: Colors.black,
                   ),
                 ),
                 focusedBorder: OutlineInputBorder(
                   borderSide: BorderSide(
-                    color: Theme.of(context).primaryColor,
+                    color: Colors.white,
                   ),
                 ),
               ),
@@ -85,7 +85,7 @@ class ShowBottomScreen extends StatelessWidget {
                                 Text(
                                   searchData.initialResults[index].coin,
                                   style: const TextStyle(
-                                    color: Colors.black,
+                                    color: Colors.white,
                                     fontSize: Sizes.size16,
                                     fontWeight: FontWeight.w500,
                                   ),
@@ -107,7 +107,7 @@ class ShowBottomScreen extends StatelessWidget {
                                   NumberFormat().format(
                                       searchData.initialResults[index].price),
                                   style: const TextStyle(
-                                    color: Colors.black,
+                                    color: Colors.white,
                                     fontSize: Sizes.size16,
                                   ),
                                 ),

@@ -38,9 +38,9 @@ class _HomeScreenState extends State<HomeScreen> {
       onTap: _bodyTap,
       child: Scaffold(
         appBar: AppBar(
-          toolbarHeight: Sizes.size64,
+          toolbarHeight: Sizes.size80,
           centerTitle: true,
-          backgroundColor: Colors.white,
+          backgroundColor: const Color(0xff1D1D1D),
           elevation: 0,
           title: Column(
             children: [
@@ -61,9 +61,9 @@ class _HomeScreenState extends State<HomeScreen> {
                                     .format(calTotal.totalPrice),
                                 textAlign: TextAlign.center,
                                 style: const TextStyle(
-                                  fontFamily: 'Britney',
+                                  fontFamily: 'ClashGrotesk',
                                   fontSize: Sizes.size40,
-                                  color: Colors.black,
+                                  color: Colors.white,
                                   fontWeight: FontWeight.w600,
                                 )),
                           ),
@@ -73,15 +73,12 @@ class _HomeScreenState extends State<HomeScreen> {
                   ),
                 ],
               ),
-              const Divider(
-                color: Color.fromARGB(255, 199, 199, 199),
-                thickness: 1,
-              ),
             ],
           ),
         ),
         body: const BodyHomeScreen(),
         bottomNavigationBar: BottomAppBar(
+          color: Colors.black,
           elevation: 0,
           child: GestureDetector(
             onTap: () {
@@ -96,7 +93,7 @@ class _HomeScreenState extends State<HomeScreen> {
               child: const Icon(
                 FontAwesomeIcons.angleUp,
                 size: Sizes.size28,
-                color: Colors.black,
+                color: Colors.white,
               ),
             ),
           ),

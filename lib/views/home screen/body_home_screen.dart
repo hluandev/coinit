@@ -43,7 +43,7 @@ class _BodyHomeScreenState extends State<BodyHomeScreen> {
               key: UniqueKey(),
               child: Column(
                 children: [
-                  Gaps.v16,
+                  Gaps.v8,
                   Container(
                     padding: const EdgeInsets.only(
                       top: Sizes.size20,
@@ -51,9 +51,8 @@ class _BodyHomeScreenState extends State<BodyHomeScreen> {
                       right: Sizes.size20,
                     ),
                     decoration: BoxDecoration(
-                      border: Border.all(
-                        color: const Color.fromARGB(255, 200, 200, 200),
-                      ),
+                      color: const Color(0xff292929),
+                      borderRadius: BorderRadius.circular(Sizes.size14),
                     ),
                     child: Column(
                       children: [
@@ -63,7 +62,7 @@ class _BodyHomeScreenState extends State<BodyHomeScreen> {
                             Text(
                               addAndRemoveCoin.coinsOnScreen[index].coin,
                               style: const TextStyle(
-                                color: Colors.black,
+                                color: Colors.white,
                                 fontSize: Sizes.size20,
                                 fontWeight: FontWeight.w500,
                               ),
@@ -72,7 +71,7 @@ class _BodyHomeScreenState extends State<BodyHomeScreen> {
                               NumberFormat().format(
                                   addAndRemoveCoin.coinsOnScreen[index].price),
                               style: const TextStyle(
-                                color: Colors.black,
+                                color: Colors.white,
                                 fontSize: Sizes.size20,
                               ),
                             ),
@@ -127,25 +126,26 @@ class _BodyHomeScreenState extends State<BodyHomeScreen> {
                         ),
                         Gaps.v10,
                         const Divider(
-                          color: Color.fromARGB(255, 200, 200, 200),
+                          color: Color.fromARGB(255, 66, 66, 66),
                           thickness: 1,
                         ),
                         SizedBox(
-                          height: Sizes.size40,
+                          height: Sizes.size48,
                           child: TextFormField(
-                            cursorColor: Theme.of(context).primaryColor,
+                            cursorColor: Colors.white,
                             decoration: const InputDecoration(
                               hintText: '0',
+                              hintStyle: TextStyle(color: Colors.white),
                               contentPadding: EdgeInsets.only(
                                 top: 0,
-                                bottom: Sizes.size14,
+                                bottom: Sizes.size11,
                               ),
                               enabledBorder: InputBorder.none,
                               focusedBorder: InputBorder.none,
                             ),
                             textAlign: TextAlign.center,
                             style: const TextStyle(
-                              color: Colors.black,
+                              color: Colors.white,
                               fontSize: Sizes.size20,
                             ),
                             initialValue: calTotal.userInputValue[index]
@@ -163,6 +163,7 @@ class _BodyHomeScreenState extends State<BodyHomeScreen> {
                       ],
                     ),
                   ),
+                  Gaps.v16,
                 ],
               ),
             );
