@@ -6,7 +6,6 @@ import 'package:c_app/data/cal_total_data.dart';
 import 'package:c_app/views/home%20screen/body_home_screen.dart';
 import 'package:c_app/views/home%20screen/show_bottom_screen.dart';
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:intl/intl.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -89,10 +88,10 @@ class _HomeScreenState extends State<HomeScreen> {
               ).whenComplete(() => addAndRemoveCoin.shownBottom = false);
             },
             child: Container(
-              padding: const EdgeInsets.symmetric(vertical: Sizes.size10),
+              color: Colors.black,
               child: const Icon(
-                FontAwesomeIcons.angleUp,
-                size: Sizes.size28,
+                Icons.expand_less,
+                size: Sizes.size48,
                 color: Colors.white,
               ),
             ),
