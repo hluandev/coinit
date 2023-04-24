@@ -1,6 +1,5 @@
 import 'dart:async';
 
-import 'package:c_app/const/gaps.dart';
 import 'package:c_app/const/sizes.dart';
 import 'package:c_app/data/add_and_remove_coin.dart';
 import 'package:c_app/data/cal_total_data.dart';
@@ -38,7 +37,6 @@ class _HomeScreenState extends State<HomeScreen> {
       onTap: _bodyTap,
       child: Scaffold(
         appBar: AppBar(
-          toolbarHeight: Sizes.size60,
           centerTitle: true,
           backgroundColor: const Color(0xff1D1D1D),
           elevation: 0,
@@ -74,7 +72,6 @@ class _HomeScreenState extends State<HomeScreen> {
                   ),
                 ],
               ),
-              Gaps.v24,
             ],
           ),
         ),
