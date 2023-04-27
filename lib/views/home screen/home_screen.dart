@@ -4,7 +4,7 @@ import 'package:c_app/const/sizes.dart';
 import 'package:c_app/data/add_and_remove_coin.dart';
 import 'package:c_app/data/cal_total_data.dart';
 import 'package:c_app/views/home%20screen/body_home_screen.dart';
-import 'package:c_app/views/home%20screen/show_bottom_screen.dart';
+import 'package:c_app/views/home%20screen/bottom_home_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 
@@ -62,10 +62,9 @@ class _HomeScreenState extends State<HomeScreen> {
                                   .format(calTotal.totalPrice),
                               textAlign: TextAlign.center,
                               style: const TextStyle(
-                                fontFamily: 'ClashGrotesk',
                                 fontSize: Sizes.size40,
                                 color: Colors.white,
-                                fontWeight: FontWeight.w600,
+                                fontWeight: FontWeight.w500,
                               ),
                             ),
                           ),
