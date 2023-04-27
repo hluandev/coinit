@@ -7,14 +7,15 @@ import 'package:http/http.dart' as http;
 class ApiData extends ChangeNotifier {
   List<ApiModel> coins = [];
 
-  // late Future future = getCoins();
+  // Get coin information from API
+
   Future getCoins() async {
     coins.clear();
-    final reponse = await http.get(
+    final response = await http.get(
       Uri.https('api.coincap.io', "v2/assets"),
     );
 
-    final jsonData = jsonDecode(reponse.body);
+    final jsonData = jsonDecode(response.body);
 
     for (final eachCoin in jsonData['data']) {
       final coin = ApiModel(

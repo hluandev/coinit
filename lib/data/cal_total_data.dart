@@ -7,6 +7,7 @@ class CalTotalData extends ChangeNotifier {
   List<double> userInputValue = List.generate(100, (index) => 0);
   double totalPrice = 0;
 
+  //Check total input value in LocalStorage
   void hiveUserInputValueForTotal() {
     if (hvData.readUserInputValueForTotal() !=
         List.generate(100, (index) => 0)) {
@@ -20,12 +21,14 @@ class CalTotalData extends ChangeNotifier {
     }
   }
 
+  //Check input value in LocalStorage
   void hiveUserInputValue() {
     if (hvData.readUserInput() != List.generate(100, (index) => 0)) {
       userInputValue = hvData.readUserInput();
     }
   }
 
+  //Calculate total price
   void calTotal(String value, int index) {
     double userInput = double.tryParse(value) ?? 0;
     double userPrice = userInput * addAndRemoveCoin.coinsOnScreen[index].price;
@@ -44,6 +47,7 @@ class CalTotalData extends ChangeNotifier {
     }
   }
 
+  //Update total price
   void updateTotal() {
     double sum = 0;
     for (var i = 0; i < addAndRemoveCoin.coinsOnScreen.length; i++) {
@@ -61,6 +65,7 @@ class CalTotalData extends ChangeNotifier {
     }
   }
 
+  //Remove input from userInputValue list
   void removeInput(int index) {
     total[index] = 0;
     total.removeAt(index);

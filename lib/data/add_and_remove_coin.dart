@@ -13,11 +13,15 @@ class AddAndRemoveCoin extends ChangeNotifier {
 
   late Timer time;
 
+  // Check local data
+
   void hiveCoinData() {
     if (hvData.readData().isNotEmpty) {
       coinsOnScreen = hvData.readData();
     }
   }
+
+  //Add coins to a coinOnScreen list
 
   void addCoin(int index) {
     coinsOnScreen.add(
@@ -31,6 +35,8 @@ class AddAndRemoveCoin extends ChangeNotifier {
     hvData.saveData(coinsOnScreen);
     notifyListeners();
   }
+
+  //Update coins every 10s
 
   Future updateCoin() async {
     if (shownBottom == false) {
@@ -60,6 +66,8 @@ class AddAndRemoveCoin extends ChangeNotifier {
       return;
     }
   }
+
+  //Remove coin from coinOnScreen list
 
   void removeCoin(int index) {
     coinsOnScreen.removeAt(index);
