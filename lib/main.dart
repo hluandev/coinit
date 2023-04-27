@@ -20,7 +20,7 @@ class MyApp extends StatelessWidget {
       themeMode: ThemeMode.system,
       theme: ThemeData(
         primaryColor: const Color.fromARGB(255, 0, 0, 0),
-        scaffoldBackgroundColor: const Color(0xff1D1D1D),
+        scaffoldBackgroundColor: Colors.black,
         fontFamily: 'SpaceGrotesk',
       ),
       home: const HomeScreen(),

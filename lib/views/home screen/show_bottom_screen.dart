@@ -71,7 +71,7 @@ class ShowBottomScreen extends StatelessWidget {
                         vertical: Sizes.size8,
                       ),
                       child: InkWell(
-                        splashColor: const Color(0xffcc00ff),
+                        splashColor: Colors.grey,
                         splashFactory: InkSparkle.splashFactory,
                         onTap: () {
                           addAndRemoveCoin.addCoin(index);
@@ -115,18 +115,19 @@ class ShowBottomScreen extends StatelessWidget {
                                 Row(
                                   children: [
                                     Text(
+                                      //Percent 24h
                                       '${NumberFormat().format(double.parse(searchData.initialResults[index].percent24h))}%',
                                       style: TextStyle(
                                         color: double.parse(searchData
                                                     .initialResults[index]
                                                     .percent24h) >
                                                 0
-                                            ? const Color.fromARGB(
-                                                255, 46, 230, 0)
-                                            : const Color(0xffFF0000),
+                                            ? const Color(0xff00f6ff)
+                                            : const Color(0xfffc00ff),
                                         fontSize: Sizes.size14,
                                       ),
                                     ),
+                                    //Arrow up and down
                                     Icon(
                                       double.parse(searchData
                                                   .initialResults[index]
@@ -138,9 +139,8 @@ class ShowBottomScreen extends StatelessWidget {
                                                   .initialResults[index]
                                                   .percent24h) >
                                               0
-                                          ? const Color.fromARGB(
-                                              255, 46, 230, 0)
-                                          : const Color(0xffFF0000),
+                                          ? const Color(0xff00f6ff)
+                                          : const Color(0xfffc00ff),
                                       size: Sizes.size14,
                                     )
                                   ],

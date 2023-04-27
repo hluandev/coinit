@@ -51,7 +51,7 @@ class _BodyHomeScreenState extends State<BodyHomeScreen> {
                       right: Sizes.size20,
                     ),
                     decoration: BoxDecoration(
-                      color: const Color(0xff292929),
+                      border: Border.all(color: Colors.grey.shade800),
                       borderRadius: BorderRadius.circular(Sizes.size14),
                     ),
                     child: Column(
@@ -59,6 +59,7 @@ class _BodyHomeScreenState extends State<BodyHomeScreen> {
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
+                            //Coin
                             Text(
                               addAndRemoveCoin.coinsOnScreen[index].coin,
                               style: const TextStyle(
@@ -67,6 +68,7 @@ class _BodyHomeScreenState extends State<BodyHomeScreen> {
                                 fontWeight: FontWeight.w500,
                               ),
                             ),
+                            //Price
                             Text(
                               NumberFormat().format(
                                   addAndRemoveCoin.coinsOnScreen[index].price),
@@ -81,6 +83,7 @@ class _BodyHomeScreenState extends State<BodyHomeScreen> {
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
+                            //Symbol
                             Text(
                               addAndRemoveCoin.coinsOnScreen[index].symbol,
                               style: const TextStyle(
@@ -90,6 +93,7 @@ class _BodyHomeScreenState extends State<BodyHomeScreen> {
                             ),
                             Row(
                               children: [
+                                //Percent in 24h
                                 Text(
                                   '${NumberFormat().format(
                                     double.parse(addAndRemoveCoin
@@ -100,11 +104,12 @@ class _BodyHomeScreenState extends State<BodyHomeScreen> {
                                                 .coinsOnScreen[index]
                                                 .percent24h) >
                                             0
-                                        ? const Color.fromARGB(255, 46, 230, 0)
-                                        : const Color(0xffFF0000),
+                                        ? const Color(0xff00f6ff)
+                                        : const Color(0xfffc00ff),
                                     fontSize: Sizes.size16,
                                   ),
                                 ),
+                                //Arrow up and down
                                 Icon(
                                   double.parse(addAndRemoveCoin
                                               .coinsOnScreen[index]
@@ -116,8 +121,8 @@ class _BodyHomeScreenState extends State<BodyHomeScreen> {
                                               .coinsOnScreen[index]
                                               .percent24h) >
                                           0
-                                      ? const Color.fromARGB(255, 46, 230, 0)
-                                      : const Color(0xffFF0000),
+                                      ? const Color(0xff00f6ff)
+                                      : const Color(0xfffc00ff),
                                   size: Sizes.size14,
                                 )
                               ],

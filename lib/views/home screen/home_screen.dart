@@ -18,6 +18,7 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> {
   @override
   void initState() {
+    //Refresh state to update price every 10s
     Timer.periodic(const Duration(seconds: 10), (timer) {
       if (MediaQuery.of(context).viewInsets.bottom == 0) {
         addAndRemoveCoin.updateCoin();
@@ -37,8 +38,10 @@ class _HomeScreenState extends State<HomeScreen> {
       onTap: _bodyTap,
       child: Scaffold(
         appBar: AppBar(
+          //Total price
           centerTitle: true,
-          backgroundColor: const Color(0xff1D1D1D),
+          toolbarHeight: Sizes.size64,
+          backgroundColor: Colors.black,
           elevation: 0,
           title: Column(
             children: [
