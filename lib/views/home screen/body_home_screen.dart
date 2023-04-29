@@ -43,10 +43,10 @@ class _BodyHomeScreenState extends State<BodyHomeScreen> {
               key: UniqueKey(),
               child: Column(
                 children: [
-                  Gaps.v8,
+                  Gaps.v16,
                   Container(
                     padding: const EdgeInsets.only(
-                      top: Sizes.size20,
+                      top: Sizes.size12,
                       left: Sizes.size20,
                       right: Sizes.size20,
                     ),
@@ -135,7 +135,7 @@ class _BodyHomeScreenState extends State<BodyHomeScreen> {
                           thickness: 1,
                         ),
                         SizedBox(
-                          height: Sizes.size48,
+                          height: Sizes.size40,
                           child: TextFormField(
                             cursorColor: Colors.white,
                             decoration: const InputDecoration(
@@ -143,7 +143,7 @@ class _BodyHomeScreenState extends State<BodyHomeScreen> {
                               hintStyle: TextStyle(color: Colors.white),
                               contentPadding: EdgeInsets.only(
                                 top: 0,
-                                bottom: Sizes.size11,
+                                bottom: Sizes.size16,
                               ),
                               enabledBorder: InputBorder.none,
                               focusedBorder: InputBorder.none,
@@ -168,7 +168,7 @@ class _BodyHomeScreenState extends State<BodyHomeScreen> {
                       ],
                     ),
                   ),
-                  Gaps.v16,
+                  Gaps.v6,
                 ],
               ),
             );

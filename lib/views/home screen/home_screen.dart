@@ -40,7 +40,6 @@ class _HomeScreenState extends State<HomeScreen> {
         appBar: AppBar(
           //Total price
           centerTitle: true,
-          toolbarHeight: Sizes.size64,
           backgroundColor: Colors.black,
           elevation: 0,
           title: Column(
