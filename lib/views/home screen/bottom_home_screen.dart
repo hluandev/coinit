@@ -16,7 +16,6 @@ class ShowBottomScreen extends StatelessWidget {
       backgroundColor: Colors.black,
       appBar: AppBar(
         elevation: 0,
-        // toolbarHeight: Sizes.size80,
         backgroundColor: Colors.black,
         automaticallyImplyLeading: false,
         title: Padding(
@@ -30,7 +29,7 @@ class ShowBottomScreen extends StatelessWidget {
                 fontSize: Sizes.size16,
               ),
               decoration: const InputDecoration(
-                fillColor: Color.fromARGB(255, 42, 42, 42),
+                fillColor: Color(0xff303030),
                 filled: true,
                 contentPadding: EdgeInsets.symmetric(
                   vertical: 0,
@@ -59,7 +58,7 @@ class ShowBottomScreen extends StatelessWidget {
           if (snapshot.connectionState == ConnectionState.done) {
             return Padding(
               padding: const EdgeInsets.symmetric(
-                horizontal: Sizes.size16,
+                horizontal: Sizes.size16 + Sizes.size1,
               ),
               child: AnimatedBuilder(
                 animation: searchData,
