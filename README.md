@@ -1,8 +1,6 @@
-# CryptCrypt
+# Coinit
 
-A simple app that allows you to manage your cryptocurrencies.
-
-## Download
+A simple app that allows people to manage their cryptocurrencies in an easy way.
 
 ## Screenshots
 
